@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="卡塞尔学院文化特色展示页面">
+    <title>学院文化 | 卡塞尔学院</title>
+    <style>
+        /* 复用B1基础样式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #4f90fe 0%, #2b6cd4 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            font-family: "仿宋", FangSong, STFangsong, serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: #1a53ff;
+            font-size: 2rem;
+            font-family: "仿宋", FangSong, STFangsong, serif;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-text {
+            font-family: "楷体", KaiTi, STKaiti, serif;
+            font-size: 1.25rem;
+            color: #444;
+            text-indent: 2em;
+            line-height: 1.8;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #4f90fe;
+            color: white !important;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: "楷体", KaiTi, STKaiti, serif;
+        }
+
+        .back-link:hover {
+            background: #3a7bd5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .media-container {
+            margin: 2.5rem 0;
+            background: linear-gradient(145deg, #f8f9ff 0%, #ffffff 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(79, 144, 254, 0.15);
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4f90fe 0%, #2b6cd4 100%);
+        }
+
+        .video-title {
+            font-family: "仿宋", FangSong, STFangsong, serif;
+            color: #1a53ff;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .video-title::before {
+            content: "▶";
+            font-size: 1.2em;
+            color: #ff4757;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #000;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(79, 144, 254, 0.3);
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* 视频控件美化 */
+        video::-webkit-media-controls-panel {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+        }
+
+        video::-webkit-media-controls-play-button {
+            background-color: #4f90fe;
+            border-radius: 50%;
+        }
+
+        video::-webkit-media-controls-timeline {
+            background-color: rgba(79, 144, 254, 0.2);
+        }
+
+        .forum-link {
+            color: #1a53ff;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .forum-link:hover {
+            color: #3a7bd5;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .video-wrapper {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>学院文化</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title">自由一日</h2>
+            <p class="content-text">
+                “自由一日”是一年一度学生们狂欢的节日，时间大约在新学年的开始。在这一天，大多数的学生纪律都可以不被遵守，学生们可以自由自在的做想做的事情。
+            </p>
+            <p class="content-text">
+                自由一日中最大的活动便是狮心会与学生会的战争，战争双方动用除了实弹外的一切武器（包括小型战术核弹），只为最后分出胜负，最后的胜出者将会获得学院内高级会馆诺顿馆一年的使用权、年度“学院之星”决赛权，以及在学院内追求的第一个女生不得拒绝并至少维持三个月关系的权利。
+            </p>
+            <p class="content-text">
+                路明非入学第一日便乱入正在进行的自由一日战争中，并击倒对峙的楚子航和恺撒，赢得了自由一日的胜利。可惜的是，他没有足够的钱付诺顿馆的租金，也没有胆量追求诺诺，至于学院之星比赛则被忘记了。
+            </p>
+        </section>
+
+        <div class="media-container">
+            <p class="video-title">自由一日实录影像</p>
+            <div class="video-wrapper">
+                <video src="视频/自由一日.mp4" controls poster="images/video-poster.jpg" preload="metadata">
+                    <track kind="captions" src="vtt/captions_zh.vtt" srclang="zh" label="中文">
+                </video>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">守夜人讨论区</h2>
+            <p class="content-text">
+                守夜人讨论区是卡塞尔学院的网上BBS，大多数学生和教师都会关注这个讨论区，学生们可以在讨论区里讨论时事，也可以发布消息和悬赏，甚至可以发起博彩。芬格尔是讨论区的管理员，而正如讨论区的名字，副校长守夜人是讨论区的版主。楚子航的ID为“村雨”，恺撒的ID为“狄克推多”（马甲为“索尼克”），曼斯坦因教授使用真名注册登录，昂热ID为“剑桥折刀”，执行部长施耐德ID为“格陵兰阴影”。
+            </p>
+            <p class="content-text" style="text-indent:0;">
+                <a href="https://tieba.baidu.com/f?kw=%E5%AE%88%E5%A4%9C%E4%BA%BA%E8%AE%A8%E8%AE%BA%E5%8C%BA"
+                    class="forum-link">
+                    守夜人论坛>>
+                </a>
+            </p>
+        </section>
+
+        <section class="content-section text-right">
+            <a href="A1.html" class="back-link">返回首页</a>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!-- 文档类型声明，告诉浏览器使用HTML5标准解析文档 -->
+<!DOCTYPE html>
+<!-- 设置文档语言为简体中文，有助于搜索引擎识别和屏幕朗读设备 -->
+<html lang="zh-CN">
+
+<head>
+    <!-- 字符编码设置，推荐使用UTF-8以避免中文乱码 -->
+    <meta charset="UTF-8">
+    <!-- 
+        viewport设置，移动端适配的关键：
+        width=device-width 使页面宽度等于设备宽度
+        initial-scale=1.0 初始缩放比例为1:1
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题，显示在浏览器标签页上 -->
+    <title>卡塞尔学院官方网站</title>
+    
+    <!-- 内部样式表 -->
+    <style>
+        /* 
+            CSS自定义属性（变量）定义
+            方便全局统一管理和复用设计参数 
+        */
+        :root {
+            --primary-color: #1c4ba9;  /* 主色调（导航背景色） */
+            --accent-color: #c00;      /* 强调色（标题颜色） */
+            --text-color: #070707;     /* 正文颜色 */
+            --font-title: "楷体", cursive;  /* 标题字体，备用字体为手写体 */
+            --font-body: "仿宋", serif;     /* 正文字体，备用字体为衬线体 */
+        }
+
+        /* 全局重置 */
+        * {
+            margin: 0;     /* 清除默认外边距 */
+            padding: 0;    /* 清除默认内边距 */
+            /* 
+                box-sizing设置为border-box：
+                元素的宽度包含padding和border，更符合直觉的尺寸计算
+            */
+            box-sizing: border-box;
+        }
+
+        /* 
+            主体样式设置：
+            min-height:100vh 确保页面至少占满整个视口高度
+            flex布局设置列方向排列，使footer可以自动置底 
+        */
+        body {
+            font-family: var(--font-body);  /* 使用自定义的正文字体 */
+            color: var(--text-color);       /* 使用自定义的文本颜色 */
+            line-height: 1.6;               /* 行高为字体大小的1.6倍 */
+            min-height: 100vh;              /* 最小高度等于视口高度 */
+            display: flex;                  /* 启用flex布局 */
+            flex-direction: column;         /* 垂直方向排列子元素 */
+        }
+
+        /* 容器类：用于内容居中和对齐 */
+        .container {
+            width: 100%;          /* 宽度占满父容器 */
+            max-width: 1200px;    /* 最大宽度限制（响应式设计） */
+            margin: 0 auto;       /* 水平居中 */
+            padding: 0 1rem;      /* 两侧留白（移动端适配） */
+        }
+
+        /* 页眉样式 */
+        .header {
+            background: #fff;     /* 白色背景 */
+            padding: 1rem 0;      /* 上下内边距 */
+        }
+
+        /* 
+            校徽图片的响应式设置：
+            max-height限制最大高度
+            object-fit:contain 保持图片比例自适应容器
+        */
+        .header img {
+            width: 100%;          /* 宽度充满容器 */
+            height: auto;         /* 高度自适应 */
+            max-height: 200px;    /* 最大高度限制 */
+            object-fit: contain;  /* 保持图片比例自适应 */
+        }
+
+        /* 导航菜单样式 */
+        .nav {
+            background: var(--primary-color);  /* 使用主色调 */
+            padding: 0.5rem 0;     /* 上下内边距 */
+        }
+
+        /* 导航列表使用flex布局 */
+        .nav-list {
+            display: flex;          /* 启用flex布局 */
+            justify-content: space-between;  /* 两端对齐 */
+            list-style: none;       /* 清除列表标记 */
+            gap: 1rem;              /* 子元素之间的间距 */
+        }
+
+        /* 导航链接样式 */
+        .nav-link {
+            color: #fff;            /* 文字颜色 */
+            padding: 0.8rem 1.5rem; /* 内边距 */
+            text-align: center;     /* 文字居中 */
+            transition: all 0.3s ease;  /* 过渡动画效果 */
+            border-radius: 4px;     /* 圆角效果 */
+        }
+
+        /* 导航链接悬停和焦点状态 */
+        .nav-link:hover,
+        .nav-link:focus {
+            background: #fff;            /* 背景颜色变化 */
+            color: var(--primary-color); /* 文字颜色变化 */
+            outline: none;               /* 清除默认焦点轮廓 */
+        }
+
+        /* 横幅轮播区域 */
+        .banner {
+            background: #fffd00;  /* 亮黄色背景 */
+            padding: 1rem 0;      /* 上下内边距 */
+            overflow-x: auto;     /* 允许横向滚动（移动端适配） */
+        }
+
+        /* 轮播图栅格布局 */
+        .banner-grid {
+            display: flex;        /* 启用flex布局 */
+            gap: 1rem;            /* 图片间距 */
+            justify-content: center;  /* 水平居中 */
+            padding: 0 1rem;      /* 两侧留白 */
+        }
+
+        /* 轮播图片样式 */
+        .banner-img {
+            width: 230px;         /* 固定宽度 */
+            height: 80px;         /* 固定高度 */
+            object-fit: cover;    /* 保持比例填充容器 */
+            flex-shrink: 0;       /* 禁止缩小（保持固定尺寸） */
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            flex: 1;             /* 占据剩余空间（实现footer置底） */
+            padding: 2rem 0;     /* 上下内边距 */
+        }
+
+        /* 内容区栅格布局（两列） */
+        .content-grid {
+            display: grid;                      /* 启用grid布局 */
+            grid-template-columns: 1fr 2fr;     /* 列宽比例1:2 */
+            gap: 2rem;                          /* 列间距 */
+            margin: 1rem 0;                     /* 上下外边距 */
+        }
+
+        /* 内容区图片样式 */
+        .content-image {
+            width: 100%;         /* 宽度充满容器 */
+            height: 300px;       /* 固定高度 */
+            object-fit: cover;   /* 保持比例填充容器 */
+        }
+
+        /* 标题样式 */
+        .title {
+            font-family: var(--font-title);  /* 使用标题字体 */
+            color: var(--accent-color);      /* 使用强调色 */
+            font-size: 2.5rem;               /* 字体大小 */
+            margin-bottom: 1.5rem;           /* 下方间距 */
+        }
+
+        /* 正文段落样式 */
+        .content-text {
+            font-size: 1.1rem;       /* 字号稍大于默认 */
+            line-height: 1.8;        /* 更宽松的行高 */
+            text-indent: 2em;        /* 首行缩进2字符 */
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: #fff;        /* 白色背景 */
+            padding: 1.5rem 0;       /* 上下内边距 */
+            margin-top: auto;        /* 自动顶部外边距（实现置底） */
+        }
+
+        /* 页脚链接样式 */
+        .footer-link {
+            color: var(--accent-color);  /* 使用强调色 */
+            font-size: 0.9rem;           /* 较小字号 */
+            float: right;                /* 右对齐 */
+            transition: opacity 0.3s ease;  /* 透明度过渡效果 */
+        }
+
+        /* 页脚链接悬停效果 */
+        .footer-link:hover {
+            opacity: 0.8;  /* 透明度变化 */
+        }
+
+        /* 
+            响应式设计 - 平板尺寸（1024px及以下）
+            @media规则用于根据屏幕尺寸应用不同样式
+        */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;  /* 改为单列布局 */
+            }
+
+            .nav-list {
+                flex-wrap: wrap;     /* 允许导航项换行 */
+                justify-content: center;  /* 居中对齐 */
+            }
+        }
+
+        /* 移动端适配（768px及以下） */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;  /* 减小标题字号 */
+            }
+
+            .banner-img {
+                width: 180px;    /* 缩小轮播图尺寸 */
+                height: 60px;
+            }
+
+            .content-image {
+                height: 200px;   /* 降低内容图片高度 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 页头区域，role属性增强可访问性 -->
+    <header class="header" role="banner">
+        <div class="container">
+            <!-- 
+                校徽图片：
+                loading="lazy" 实现延迟加载
+                alt属性为无障碍阅读提供文字说明
+            -->
+            <img src="images/8.5.PNG" alt="卡塞尔学院校徽" loading="lazy">
+        </div>
+    </header>
+
+    <!-- 导航区域，aria-label为屏幕阅读器提供说明 -->
+    <nav class="nav" aria-label="主导航">
+        <div class="container">
+            <!-- role属性明确元素的导航角色 -->
+            <ul class="nav-list" role="navigation">
+                <!-- 每个导航项都有menuitem角色 -->
+                <li><a href="B1.html" class="nav-link" role="menuitem">学院性质</a></li>
+                <li><a href="C1.html" class="nav-link" role="menuitem">学院构成</a></li>
+                <li><a href="D1.html" class="nav-link" role="menuitem">优秀学员</a></li>
+                <li><a href="E1.html" class="nav-link" role="menuitem">学院文化</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 轮播图区域 -->
+    <section class="banner" aria-label="学院风采">
+        <!-- 使用div而不是section，因为这里只是容器没有语义内容 -->
+        <div class="banner-grid">
+            <!-- 系列展示图片都设置了loading="lazy"优化性能 -->
+            <img src="images/6.jpg" class="banner-img" alt="学院活动1" loading="lazy">
+            <img src="images/7.jpg" class="banner-img" alt="学院活动2" loading="lazy">
+            <img src="images/8.jpg" class="banner-img" alt="学院环境1" loading="lazy">
+            <img src="images/9.jpg" class="banner-img" alt="学院环境2" loading="lazy">
+            <img src="images/10.jpg" class="banner-img" alt="学院建筑" loading="lazy">
+        </div>
+    </section>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content container" role="main">
+        <div class="content-grid">
+            <!-- 使用article标签表示独立内容区块 -->
+            <article>
+                <img src="images/4.3.jpg" class="content-image" alt="学院全景展示" loading="lazy">
+            </article>
+            <article>
+                <!-- 主标题使用h1，页面应该只有一个h1 -->
+                <h1 class="title">卡塞尔学院</h1>
+                <p class="content-text">
+                    ！！！文本！！！
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer-link">
+                <!-- 
+                    外部链接安全设置：
+                    target="_blank" 在新标签页打开
+                    rel="noopener noreferrer" 防止tabnabbing攻击
+                -->
+                <a href="https://！！！网址！！！"
+                    target="_blank" rel="noopener noreferrer">
+                    @卡塞尔学院版权所有
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

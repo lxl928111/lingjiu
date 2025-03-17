@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡塞尔学院官方网站</title>
+    <style>
+        /* 基础重置与变量定义 */
+        :root {
+            --primary-color: #1c4ba9;
+            --accent-color: #c00;
+            --text-color: #070707;
+            --font-title: "楷体", cursive;
+            --font-body: "仿宋", serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 可重用组件 */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* 页眉样式 */
+        .header {
+            background: #fff;
+            padding: 1rem 0;
+        }
+
+        .header img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        /* 导航菜单 */
+        .nav {
+            background: var(--primary-color);
+            padding: 0.5rem 0;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            background: #fff;
+            color: var(--primary-color);
+            outline: none;
+        }
+
+        /* 横幅轮播 */
+        .banner {
+            background: #fffd00;
+            padding: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .banner-grid {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding: 0 1rem;
+        }
+
+        .banner-img {
+            width: 230px;
+            height: 80px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* 主要内容区 */
+        .main-content {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .content-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* 文字排版 */
+        .title {
+            font-family: var(--font-title);
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-indent: 2em;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: #fff;
+            padding: 1.5rem 0;
+            margin-top: auto;
+        }
+
+        .footer-link {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            float: right;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-link:hover {
+            opacity: 0.8;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .banner-img {
+                width: 180px;
+                height: 60px;
+            }
+
+            .content-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" role="banner">
+        <div class="container">
+            <img src="images/8.5.PNG" alt="卡塞尔学院校徽" loading="lazy">
+        </div>
+    </header>
+
+    <nav class="nav" aria-label="主导航">
+        <div class="container">
+            <ul class="nav-list" role="navigation">
+                <li><a href="B1.html" class="nav-link" role="menuitem">学院性质</a></li>
+                <li><a href="C1.html" class="nav-link" role="menuitem">学院构成</a></li>
+                <li><a href="D1.html" class="nav-link" role="menuitem">优秀学员</a></li>
+                <li><a href="E1.html" class="nav-link" role="menuitem">学院文化</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="banner" aria-label="学院风采">
+        <div class="banner-grid">
+            <img src="images/6.jpg" class="banner-img" alt="学院活动1" loading="lazy">
+            <img src="images/7.jpg" class="banner-img" alt="学院活动2" loading="lazy">
+            <img src="images/8.jpg" class="banner-img" alt="学院环境1" loading="lazy">
+            <img src="images/9.jpg" class="banner-img" alt="学院环境2" loading="lazy">
+            <img src="images/10.jpg" class="banner-img" alt="学院建筑" loading="lazy">
+        </div>
+    </section>
+
+    <main class="main-content container" role="main">
+        <div class="content-grid">
+            <article>
+                <img src="images/4.3.jpg" class="content-image" alt="学院全景展示" loading="lazy">
+            </article>
+            <article>
+                <h1 class="title">卡塞尔学院</h1>
+                <p class="content-text">
+                    学院表面上研究古代爬行动物，其真面目是欧洲混血种组织“秘党”成立的屠龙专业学校，以德国屠龙世家“卡塞尔”的姓氏命名。学生返校一般在芝加哥火车站乘坐CC1000次支线快车或直接乘坐直升机抵达。学院课程包括《魔动机械设计学》、《炼金化学》、《言灵学》、《古诺尔斯语》、《龙族家族谱系》等，所有课程的最终目的都是屠龙。
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer-link">
+                <a href="https://baike.baidu.com/item/%E5%8D%A1%E5%A1%9E%E5%B0%94%E5%AD%A6%E9%99%A2/139140"
+                    target="_blank" rel="noopener noreferrer">
+                    @卡塞尔学院版权所有
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
