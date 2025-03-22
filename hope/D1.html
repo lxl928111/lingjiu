@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="卡塞尔学院优秀学员完整档案">
+    <title>优秀学员 | 卡塞尔学院</title>
+    <style>
+        :root {
+            --primary-color: #4f90fe;
+            --secondary-color: #1a53ff;
+            --text-color: #333;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2b6cd4 100%);
+            color: white;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-family: "仿宋", FangSong, STFangsong, serif;
+            text-align: center;
+        }
+
+        .student-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+        }
+
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .student-table th,
+        .student-table td {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .student-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            min-width: 120px;
+        }
+
+        .original-text {
+            font-family: "楷体", KaiTi, STKaiti, serif;
+            font-size: 1.1rem;
+            color: #444;
+            text-indent: 2em;
+            line-height: 1.8;
+            margin: 1rem 0;
+            white-space: pre-line;
+        }
+
+        .nav-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .nav-link {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white !important;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: "楷体", KaiTi, STKaiti, serif;
+        }
+
+        .nav-link:hover {
+            background: #3a7bd5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
+
+            .student-profile {
+                grid-template-columns: 1fr;
+            }
+
+            .student-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>优秀学员档案</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 路明非档案 - 完整原始文本 -->
+        <article class="student-profile">
+            <figure>
+                <img src="images/D.jpg" alt="路明非学员正装照" class="profile-image" loading="lazy">
+            </figure>
+            <section>
+                <table class="student-table">
+                    <tr>
+                        <th>中文名</th>
+                        <td>路明非</td>
+                        <th>体重</th>
+                        <td>63kg</td>
+                    </tr>
+                    <tr>
+                        <th>外文名</th>
+                        <td>Ricardo·M·Lu（李嘉图·M·路）</td>
+                        <th>发色</th>
+                        <td>深褐色</td>
+                    </tr>
+                    <tr>
+                        <th>别名</th>
+                        <td>李嘉图·M·路、神眷之樱花、Sakura</td>
+                        <th>生肖</th>
+                        <td>羊</td>
+                    </tr>
+                    <tr>
+                        <th>性别</th>
+                        <td>男</td>
+                        <th>星座</th>
+                        <td>巨蟹座</td>
+                    </tr>
+                    <tr>
+                        <th>执行部档案号</th>
+                        <td>071721S</td>
+                        <th>血统等级</th>
+                        <td>S级</td>
+                    </tr>
+                    <tr>
+                        <th>生日</th>
+                        <td>07月17日</td>
+                        <th>导师</th>
+                        <td>古德里安</td>
+                    </tr>
+                    <tr>
+                        <th>年龄</th>
+                        <td>19岁</td>
+                        <th>职位</th>
+                        <td>现学生会会长</td>
+                    </tr>
+                </table>
+                <p class="original-text">
+                    &nbsp;&nbsp;&nbsp;&nbsp;十八岁前是一名再平凡不过的少年，寄宿在叔叔家被忽视，暗恋女神无果，最擅长的是打游戏，理想是看报摊。十八岁这年，却因血统被评为“s”级进入卡塞尔学院，从此来到龙的国度。和自称其弟的“魔鬼”路鸣泽签订交换生命的契约，在经历斩杀诺顿、斩杀芬里厄、上杉绘梨衣之死、奥丁之战后，逐渐明白自己是这个世界上最大的怪物，为了寻找自己的真相而前往黑天鹅港，寻找自己的墓碑。
+                </p>
+            </section>
+        </article>
+
+        <!-- 凯撒档案 - 完整原始文本 -->
+        <article class="student-profile">
+            <figure>
+                <img src="images/A.jpg" alt="凯撒战斗服照" class="profile-image" loading="lazy">
+            </figure>
+            <section>
+                <table class="student-table">
+                    <tr>
+                        <th>中文名</th>
+                        <td>恺撒·加图索</td>
+                        <th>体重</th>
+                        <td>80kg</td>
+                    </tr>
+                    <tr>
+                        <th>外文名</th>
+                        <td>Cesare Gattuso</td>
+                        <th>发色</th>
+                        <td>灿金色</td>
+                    </tr>
+                    <tr>
+                        <th>别名</th>
+                        <td>高卢总督、狄克推多、跋扈贵公子</td>
+                        <th>瞳色</th>
+                        <td>冰蓝色</td>
+                    </tr>
+                    <tr>
+                        <th>性别</th>
+                        <td>男</td>
+                        <th>星座</th>
+                        <td>射手座</td>
+                    </tr>
+                    <tr>
+                        <th>执行部档案号</th>
+                        <td>112933A</td>
+                        <th>血统等级</th>
+                        <td>A级</td>
+                    </tr>
+                    <tr>
+                        <th>生日</th>
+                        <td>11月29日</td>
+                        <th>言灵</th>
+                        <td>镰鼬</td>
+                    </tr>
+                    <tr>
+                        <th>年龄</th>
+                        <td>20岁</td>
+                        <th>身份</th>
+                        <td>前学生会会长</td>
+                    </tr>
+                </table>
+                <p class="original-text">
+                    &nbsp;&nbsp;&nbsp;&nbsp;恺撒·加图索生来就是那只长着黄金鬃毛的狮子，他在草原上走过，就像太阳起落。他可以倒下，但他的正义不能倒下，他是一辈子只为骄傲活着的人。人生前期对自己的能力十分自信所以傲视一切，直到在东京执行任务目睹了麻生真惨死在自己面前却无能为力而意识到自己的不足，因此发生转变，正在逐渐成长为真正的“家族领袖”。参与过三峡、北京、东京的屠龙任务。在三峡利用风暴鱼雷重创青铜与火之王诺顿，在北京任务中在一栋大厦内使用爆血同帕西·加图索一起阻挡从尼伯龙根中逃出的鬼车鸟，在日本任务中与楚子航和昂热一起阻挡尸守群，在叔叔弗罗斯特死后成为加图索家新的代理家长，后前往北极圈执行任务。
+                </p>
+            </section>
+        </article>
+
+        <!-- 楚子航档案 - 完整原始文本 -->
+        <article class="student-profile">
+            <figure>
+                <img src="images/B.jpg" alt="楚子航战术训练照" class="profile-image" loading="lazy">
+            </figure>
+            <section>
+                <table class="student-table">
+                    <tr>
+                        <th>中文名</th>
+                        <td>楚子航</td>
+                        <th>体重</th>
+                        <td>82kg</td>
+                    </tr>
+                    <tr>
+                        <th>外文名</th>
+                        <td>Zihang Chu</td>
+                        <th>瞳色</th>
+                        <td>赤金色</td>
+                    </tr>
+                    <tr>
+                        <th>别名</th>
+                        <td>右京·橘、面瘫师兄、永燃的瞳术师</td>
+                        <th>言灵</th>
+                        <td>君焰（序号89）</td>
+                    </tr>
+                    <tr>
+                        <th>性别</th>
+                        <td>男</td>
+                        <th>星座</th>
+                        <td>双子座</td>
+                    </tr>
+                    <tr>
+                        <th>执行部档案号</th>
+                        <td>060143A</td>
+                        <th>血统等级</th>
+                        <td>超A级</td>
+                    </tr>
+                    <tr>
+                        <th>生日</th>
+                        <td>6月1日</td>
+                        <th>特长</th>
+                        <td>篮球、萨克斯、剑术</td>
+                    </tr>
+                    <tr>
+                        <th>年龄</th>
+                        <td>20岁</td>
+                        <th>职位</th>
+                        <td>前狮心会会长</td>
+                    </tr>
+                </table>
+                <p class="original-text">
+                    &nbsp;&nbsp;&nbsp;&nbsp;拥有言灵·君焰，原本血统A级，在习得“爆血”后得到提升却也因副作用而离死不远，在经过耶梦加得的龙血洗礼后稳定了血统。其亲生父亲为S级龙族混血种的楚天骄，母亲则为普通人类苏小妍，继父为企业巨头鹿天铭。在卡塞尔学院中十分受女生欢迎。作为狮心会前任会长，与学生会前任主席恺撒·加图索实力不分高下。十五岁时与楚天骄进入了尼伯龙根遭遇奥丁留下了烙印，为了追寻父亲的秘密以此找到了卡塞尔学院，后喜欢上了伪装成人类夏弥的大地与山之王耶梦加得，在其身份暴露后将其杀死得到了龙血洗礼。在日本行动后毕业进入执行部，在进入阿瓦隆尼伯龙根后失踪，被奥丁俘获并篡改其人生。除路明非及路鸣泽一行人外，没有人记得他的存在。
+                </p>
+            </section>
+        </article>
+
+        <!-- 芬格尔档案 - 完整原始文本 -->
+        <article class="student-profile">
+            <figure>
+                <img src="images/C.jpg" alt="芬格尔休闲照" class="profile-image" loading="lazy">
+            </figure>
+            <section>
+                <table class="student-table">
+                    <tr>
+                        <th>中文名</th>
+                        <td>芬格尔·冯·弗林斯</td>
+                        <th>体重</th>
+                        <td>84kg</td>
+                    </tr>
+                    <tr>
+                        <th>外文名</th>
+                        <td>Finger Von Frings</td>
+                        <th>发色</th>
+                        <td>灰白色</td>
+                    </tr>
+                    <tr>
+                        <th>别名</th>
+                        <td>废材师兄、卡塞尔第一狗仔、炎之龙斩者</td>
+                        <th>生肖</th>
+                        <td>狗</td>
+                    </tr>
+                    <tr>
+                        <th>性别</th>
+                        <td>男</td>
+                        <th>星座</th>
+                        <td>双鱼座</td>
+                    </tr>
+                    <tr>
+                        <th>执行部档案号</th>
+                        <td>071721S</td>
+                        <th>血统等级</th>
+                        <td>从A级降至G级</td>
+                    </tr>
+                    <tr>
+                        <th>生日</th>
+                        <td>2月20日</td>
+                        <th>导师</th>
+                        <td>古德里安</td>
+                    </tr>
+                    <tr>
+                        <th>年龄</th>
+                        <td>24岁</td>
+                        <th>职位</th>
+                        <td>新闻部成员</td>
+                    </tr>
+                </table>
+                <p class="original-text">
+                    &nbsp;&nbsp;&nbsp;&nbsp;入学时血统评级A，但因某些原因刻意留级多年，血统评级也降至F，后降至G（注：血统最低等级是D，更低等级是芬格尔特有的）。卡塞尔学院第一废柴，血统本身是很优秀的，只是不太争气。数学上很有天赋，连带着是计算机超级天才，但学问完全没有用在正道上，是学院内部排前几名的黑客，而且专黑学院自己的系统。自称是校长昂热安排在路明非身边的一个称职可靠低调的男保姆，既是他的保护者也是他的监视者，是为数不多知晓路明非秘密的人
+                </p>
+            </section>
+        </article>
+
+        <!-- 导航链接 - 完整保留 -->
+        <div class="nav-group">
+            <a href="F1.html" class="nav-link" aria-label="查看日常相册">日常相册>></a>
+            <a href="A1.html" class="nav-link" aria-label="返回主页面">返回</a>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <!-- 预留页脚内容 -->
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="卡塞尔学院组织架构详细介绍页面">
+    <title>学院构成 | 卡塞尔学院</title>
+    <style>
+        /* === 一级优化核心样式 === */
+        :root {
+            --primary-color: #4f90fe;
+            --secondary-color: #1a53ff;
+            --text-color: #333;
+            --border-color: #e0e0e0;
+            --table-zebra: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: var(--text-color);
+        }
+
+        /* === 响应式容器 === */
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* === 头部样式 === */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2b6cd4 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header h1 {
+            font-size: 2.25rem;
+            font-family: "仿宋", FangSong, STFangsong, serif;
+            text-align: center;
+        }
+
+        /* === 内容区块 === */
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 1.5rem 0;
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 1.75rem;
+            font-family: "仿宋", FangSong, STFangsong, serif;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .content-text {
+            font-family: "楷体", KaiTi, STKaiti, serif;
+            font-size: 1.1rem;
+            color: #444;
+            text-indent: 2em;
+            line-height: 1.8;
+            margin: 1rem 0;
+        }
+
+        /* === 表格优化 === */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .data-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            min-width: 150px;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: var(--table-zebra);
+        }
+
+        .data-table tr:hover {
+            background-color: #f1f4f8;
+        }
+
+        /* === 交互元素 === */
+        .navigation-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white !important;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: "楷体", KaiTi, STKaiti, serif;
+        }
+
+        .navigation-link:hover {
+            background: #3a7bd5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* === 响应式处理 === */
+        @media (max-width: 768px) {
+            :root {
+                font-size: 14px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 1rem 0;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .data-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>学院构成</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 学院总览 -->
+        <section class="content-section">
+            <p class="content-text">
+                卡塞尔学院由多个部门组成，其中主要有：校董会、执行部、装备部等。校长是希尔伯特·让·昂热，副校长是尼古拉斯·弗拉梅尔。学院智能AI为诺玛/Eva系统。教授包括冯·施耐德、格尔德·鲁道夫·曼施坦因、古德里安、曼斯·龙德施泰特、富山雅史,系主任有道格·琼斯、让·格鲁斯、布莱尔·比特纳（数学界的所罗门王）。
+            </p>
+        </section>
+
+        <!-- 校董会 -->
+        <section class="content-section">
+            <h2 class="section-title">校董会</h2>
+            <p class="content-text">
+                校董会是卡塞尔学院的最高权力机构，由出资的秘党元老家族出任校董，共七位校董组成。其中包括加图索家主长庞贝·加图索、洛朗家族族长伊丽莎白·洛朗、校长昂热以及“嗜龙血者”贝奥武夫。校董会有权投票决定学院的所有问题，包括但不限于决定对违纪学生的处分、决定校长的人选、决定是否批准学生的结婚申请、决定屠龙行动计划以及处决任何人。
+            </p>
+        </section>
+
+        <!-- 执行部 -->
+        <section class="content-section">
+            <h2 class="section-title">执行部</h2>
+            <p class="content-text">
+                部长为冯·施耐德教授。执行部被称为是一群暴力狂，准军事机构，会向世界各地派遣专员执行任务。前身是秘党“行动队”。任务等级分为SS、S、A、B、C、D，除了特殊的“SS”任务之外，其他任务的难度等级都是以此排名，以作分类。执行部专员包括雷蒙德、叶胜、酒德亚纪、高幂、万博倩等。
+            </p>
+            <p class="content-text">
+                学院在世界各地设置了外派机构——“分部”，用于驻扎执行部专员。
+            </p>
+
+            <table class="data-table">
+                <tr>
+                    <th>日本分部</th>
+                    <td>本质为日本黑道家族“蛇岐八家”，在秘党时代为秘党合作盟友，二战战败以后签署战败条例，改组为卡塞尔学院日本分部。在“龙渊计划”后，重新打出蛇岐八家的旗号叛变。在“白王之战”后，日本分部重新成立，校长放弃人事管辖权，但仍然拥有最高决定权。
+                    </td>
+                </tr>
+                <tr>
+                    <th>中国分部</th>
+                    <td>位于中国福建省，成员兼营餐饮行业。</td>
+                </tr>
+                <tr>
+                    <th>韩国分部</th>
+                    <td>兼营偶像天团事业。</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 装备部 -->
+        <section class="content-section">
+            <h2 class="section-title">装备部</h2>
+            <p class="content-text">
+                装备部，自称瓦特阿尔海姆。全称“炼金术与科学工程应用研究所”，不搞理论研究，工作是把科学与炼金术原理转化为实际应用，为学院提供武器，装备，研究新设备，昂热称为“炸弹狂人集中营”。该部全由男子组成。装备部部长的全名是阿卡杜拉·艾哈迈德·穆罕穆德·法鲁格，阿拉伯人。副所长卡尔，全名未知。马突尔研究员，毕业于印度工学院，专业是水下爆破。
+            </p>
+        </section>
+
+        <!-- 返回链接 -->
+        <section class="content-section text-right">
+            <a href="A1.html" class="navigation-link" aria-label="返回首页">返回首页</a>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <!-- 预留页脚内容 -->
+        </div>
+    </footer>
+</body>
+
+</html>

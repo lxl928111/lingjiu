@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龙族主题照片墙</title>
+    <style>
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f0f0;
+            min-height: 100vh;
+            padding: 2rem;
+            font-family: "楷体", system-ui, sans-serif;
+        }
+
+        /* 照片墙容器 */
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* 照片列表布局 */
+        .photos {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        /* 照片卡片样式 */
+        .photo-card {
+            position: relative;
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform: rotate(-3deg);
+        }
+
+        .photo-card:nth-child(even) {
+            transform: rotate(3deg);
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05) rotate(0deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        /* 图片样式 */
+        .photo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 1rem;
+            border: 2px solid #ddd;
+        }
+
+        /* 标题样式 */
+        .photo-card::after {
+            content: attr(title);
+            display: block;
+            text-align: center;
+            color: #c00;
+            font-size: 1.2rem;
+            padding-top: 0.5rem;
+        }
+
+        /* 导航样式 */
+        .navigation {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.25rem;
+        }
+
+        .navigation a {
+            color: #c00;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            color: #900;
+            text-decoration: underline;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .photos {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .photo-card {
+                transform: rotate(-2deg);
+                padding: 0.5rem;
+            }
+
+            .photo-card:nth-child(even) {
+                transform: rotate(2deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="gallery">
+        <ul class="photos" role="list">
+            <li class="photo-card" title="东京">
+                <img src="images/X1.webp" alt="东京城市景观" loading="lazy">
+            </li>
+            <li class="photo-card" title="双王之战">
+                <img src="images/X2.webp" alt="双王对战场景" loading="lazy">
+            </li>
+            <li class="photo-card" title="路明泽">
+                <img src="images/X3.webp" alt="路明泽角色形象" loading="lazy">
+            </li>
+            <li class="photo-card" title="绘梨衣">
+                <img src="images/X4.webp" alt="绘梨衣角色画像" loading="lazy">
+            </li>
+            <li class="photo-card" title="诺诺">
+                <img src="images/X5.webp" alt="诺诺角色特写" loading="lazy">
+            </li>
+            <li class="photo-card" title="黄昏">
+                <img src="images/X6.webp" alt="黄昏景色描绘" loading="lazy">
+            </li>
+        </ul>
+
+        <nav class="navigation" aria-label="分页导航">
+            <a href="D1.html" role="button" aria-label="上一页">上一页</a>
+            <a href="A1.html" role="button" aria-label="返回首页">首页</a>
+        </nav>
+    </main>
+</body>
+
+</html>
